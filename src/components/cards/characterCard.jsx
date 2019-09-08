@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import icon from '../assets/character-icon.png';
-import genderMale from '../assets/gender-male-icon.png';
-import genderFemale from '../assets/gender-female-icon.png';
-import genderNA from '../assets/gender-na-icon.png';
-import filmIcon from '../assets/film-icon.png';
+import icon from '../../assets/character-icon.png';
+import genderMale from '../../assets/gender-male-icon.png';
+import genderFemale from '../../assets/gender-female-icon.png';
+import genderNA from '../../assets/gender-na-icon.png';
+import filmIcon from '../../assets/film-icon.png';
 
 const Container = styled.div`
     position: relative;
@@ -76,4 +76,4 @@ const CharacterCard = ({ name, gender, episodes }) => {
     )
 }
 
-export { CharacterCard }
+export default CharacterCard;
