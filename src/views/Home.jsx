@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import * as SW_SERVICES from '../actions/sw_querys';
-import { CharacterCard } from '../components/characterCard';
+import { CharacterCard } from '../components/cards';
+
+import * as SW_SERVICES from '../actions/sw_queries';
 
 const CharactersList = styled.ul`
     position: relative;
