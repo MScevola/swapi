@@ -34,13 +34,13 @@ const Character = ({ match }) => {
         return () => {
             isMounted = false
         };
-    }, [])
+    }, [match])
 
     console.log(character)
 
     if(loading)
     return (
-        <img src={loadingImg} />
+        <img src={loadingImg} alt="...loading" />
     )
     else
     return(

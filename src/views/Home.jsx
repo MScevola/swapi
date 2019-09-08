@@ -32,7 +32,7 @@ const Home = () => {
         return () => {
             isMounted = false
         };
-    }, [])
+    }, [page])
 
     console.log(characters)
 
