@@ -1,0 +1,23 @@
+import React from 'react';
+import styled from 'styled-components';
+
+import logo from '../assets/star-wars-logo.png';
+
+const HeaderContainer = styled.header`
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    height: 100px;
+`
+
+const Header = () => {
+    return(
+        <HeaderContainer>
+            <img src={logo} alt="Star Wars Logo"/>
+        </HeaderContainer>
+    )
+}
+
+export { Header };
