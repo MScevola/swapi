@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -10,21 +10,25 @@ const CharactersList = styled.ul`
     position: relative;
     display: block;
     max-width: 800px;
+    max-height: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 60px;
     list-style: none;
+    overflow: auto;
 `
 
 const Home = () => {
     const [page, setPage] = useState(1)
     const [characters, setCharacters] = useState([])
 
+    const listRef = useRef()
+
     useEffect(() => {
         let isMounted = true
 
         const fetchData = async () => {
             const getCharacters = await SW_SERVICES.getCharacters(page)
-            setCharacters(getCharacters.results)
+            setCharacters(characters.concat(getCharacters.results))
         }
 
         if(isMounted)
@@ -35,10 +39,15 @@ const Home = () => {
         };
     }, [page])
 
-    console.log(characters)
+    const handleScroll = e => {
+        const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+        if (bottom) {
+            setPage(1 + page)
+        }
+    }
 
     return(
-        <CharactersList>
+        <CharactersList onScroll={handleScroll}>
             {
                 characters.map((item, index) => {
                     const itemId = item.url.split('/')[5]
@@ -49,6 +58,7 @@ const Home = () => {
                     )
                 })
             }
+            {/* <div onClick={() => setPage(1 + page)}>pagina</div> */}
         </CharactersList>
     )
 }

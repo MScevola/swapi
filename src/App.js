@@ -27,6 +27,26 @@ const SWAPI = styled('div')`
     position: relative;
     height: calc(100% - 100px);
     overflow: auto;
+
+    @media screen and (min-width: 1024px) {
+      &::-webkit-scrollbar-track{
+        box-shadow: none;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, .5);
+        width: 12px;
+      }
+
+      &::-webkit-scrollbar{
+        width: 12px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, .2);
+        width: 12px;
+      } 
+    }
   }
 `
 
@@ -83,7 +103,7 @@ function App() {
   return (
     <SWAPI>
       <Header />
-      <main>
+      <main id="main">
         <BrowserRouter>
           <Switch>
             <Route path="/character/:id" component={Character} />
