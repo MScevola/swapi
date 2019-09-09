@@ -94,10 +94,10 @@ const Home = Loadable({
 
 function App() {
   return (
-    <SWAPI>
+    <SWAPI data-test='swapi'>
       <BrowserRouter>
         <Header />
-        <main id="main">
+        <main>
             <Switch>
               <Route path="/character/:id" component={Character} />
               <Route path="/episode/:id" component={Episode} />

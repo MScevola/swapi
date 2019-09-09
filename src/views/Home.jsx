@@ -84,7 +84,7 @@ const Home = () => {
     }
 
     return(
-        <Container>
+        <Container data-test='home'>
             <SearchBox onChange={handleSearch} />
             <CharactersList onScroll={handleScroll}>
                 {
