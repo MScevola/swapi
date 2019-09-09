@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import logo from '../assets/star-wars-logo.png';
 
@@ -14,9 +15,11 @@ const HeaderContainer = styled.header`
 
 const Header = () => {
     return(
-        <HeaderContainer>
-            <img src={logo} alt="Star Wars Logo"/>
-        </HeaderContainer>
+        <Link to='/'>
+            <HeaderContainer>
+                <img src={logo} alt="Star Wars Logo"/>
+            </HeaderContainer>
+        </Link>
     )
 }
 

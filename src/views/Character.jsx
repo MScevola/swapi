@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-import { FilmsList, SpeciesList, StarshipsList, VehiclesList } from '../sections';
+import { Preloader } from '../components/preloader';
 
-import loadingImg from '../assets/loading.png';
+import { FilmsList, SpeciesList, StarshipsList, VehiclesList, PlanetsList } from '../sections';
 
 import * as SW_SERVICES from '../actions/sw_queries';
 
@@ -11,11 +11,33 @@ const Container = styled.div`
     position: relative;
     display: block;
     max-width: 800px;
+    max-height: 100%;
     box-sizing: border-box;
     border-radius: 8px;
     margin: 0 auto;
     padding: 20px;
+    overflow: auto;
     color: #ffca1e;
+
+    @media screen and (min-width: 1024px) {
+      &::-webkit-scrollbar-track{
+        box-shadow: none;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, .5);
+        width: 12px;
+      }
+
+      &::-webkit-scrollbar{
+        width: 12px;
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, .2);
+        width: 12px;
+      } 
+    }
 
     .physical{
         position: relative;
@@ -61,19 +83,21 @@ const Character = ({ match }) => {
 
     if(loading)
     return (
-        <img src={loadingImg} alt="...loading" />
+        <Preloader />
     )
     else
     return(
         <Container>
             <h1>{character.name}</h1>
             <ul className="physical">
-                <li className="height"><span>Height: </span>{character.height}</li>
-                <li className="mass"><span>Mass: </span>{character.mass}</li>
-                <li className="eye-color"><span>Eyes color: </span>{character.eye_color}</li>
-                <li className="hair-color"><span>Hair color: </span>{character.hair_color}</li>
-                <li className="skin-color"><span>Skin color: </span>{character.skin_color}</li>
+                <li><span>Birth: </span>{character.birth_year}</li>
+                <li><span>Height: </span>{character.height}</li>
+                <li><span>Mass: </span>{character.mass}</li>
+                <li><span>Eyes color: </span>{character.eye_color}</li>
+                <li><span>Hair color: </span>{character.hair_color}</li>
+                <li><span>Skin color: </span>{character.skin_color}</li>
             </ul>
+            <PlanetsList planets={[character.homeworld]} />
             <SpeciesList species={character.species} />
             <VehiclesList vehicles={character.vehicles} />
             <StarshipsList starships={character.starships} />

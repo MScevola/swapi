@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import icon from '../../assets/character-icon.png';
 import genderMale from '../../assets/gender-male-icon.png';
 import genderFemale from '../../assets/gender-female-icon.png';
+import genderHermaphrodite from '../../assets/gender-hermaphrodite-icon.png';
 import genderNA from '../../assets/gender-na-icon.png';
 import filmIcon from '../../assets/film-icon.png';
 
@@ -63,6 +64,8 @@ const CharacterCard = ({ name, gender, episodes }) => {
                 return genderMale;
             case 'female':
                 return genderFemale;
+            case 'hermaphrodite':
+                return genderHermaphrodite;
             default:
                 return genderNA;
         }
