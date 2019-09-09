@@ -43,11 +43,11 @@ const FilmCard = ({ film }) => {
     }, [film])
     
     return(
-        <Link to={`/episode/${filmData.episode_id}`}>
+        // <Link to={`/episode/${filmData.episode_id}`}>
             <Container>
                 <span className="film-title">{filmData.title}</span>
             </Container>
-        </Link>
+        // </Link>
     )
 }
 
