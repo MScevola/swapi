@@ -19,7 +19,7 @@ const CharactersList = styled.ul`
     position: relative;
     display: block;
     max-width: 800px;
-    max-height: calc(100% - 74px);
+    max-height: calc(100% - 78px);
     margin: 0 auto;
     padding: 0 20px 60px;
     list-style: none;
