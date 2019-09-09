@@ -14,6 +14,18 @@ export async function getCharacters(page){
     }
 }
 
+export async function searchCharacters(search){   
+    try {
+        const headers = {
+            'Content-Type': 'application/json'
+        };
+        const res = await  axios.get(`${API_URL}/people/?search=${search}`,{headers})
+       return res.data
+    }catch(err){
+        throw err.response.data
+    }
+}
+
 export async function getCharacter(id){   
     try {
         const headers = {
@@ -68,6 +80,18 @@ export async function getStarship(id){
             'Content-Type': 'application/json'
         };
         const res = await  axios.get(`${API_URL}/starships/${id}/`,{headers})
+       return res.data
+    }catch(err){
+        throw err.response.data
+    }
+}
+
+export async function getPlanet(id){   
+    try {
+        const headers = {
+            'Content-Type': 'application/json'
+        };
+        const res = await  axios.get(`${API_URL}/planets/${id}/`,{headers})
        return res.data
     }catch(err){
         throw err.response.data

@@ -5,16 +5,9 @@ import styled from 'styled-components';
 
 import './App.css';
 
-import loading from './assets/loading.png';
 import background from './assets/background.jpg';
 import { Header } from './components/header';
-
-const LoaderStyle = styled('div')`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`
+import { Preloader } from './components/preloader';
 
 const SWAPI = styled('div')`
   position: fixed;
@@ -53,70 +46,70 @@ const SWAPI = styled('div')`
 const Character = Loadable({
   loader: () => import("./views/Character"),
   loading() {
-    return <LoaderStyle><img src={loading} alt='loading...' /></LoaderStyle>;
+    return <Preloader />
   }
 });
 
 const Episode = Loadable({
   loader: () => import("./views/Episode"),
   loading() {
-    return <LoaderStyle><img src={loading} alt='loading...' /></LoaderStyle>;
+    return <Preloader />
   }
 });
 
 const Specie = Loadable({
   loader: () => import("./views/Specie"),
   loading() {
-    return <LoaderStyle><img src={loading} alt='loading...' /></LoaderStyle>;
+    return <Preloader />
   }
 });
 
 const Vehicle = Loadable({
   loader: () => import("./views/Vehicle"),
   loading() {
-    return <LoaderStyle><img src={loading} alt='loading...' /></LoaderStyle>;
+    return <Preloader />
   }
 });
 
 const Planet = Loadable({
   loader: () => import("./views/Home"),
   loading() {
-    return <LoaderStyle><img src={loading} alt='loading...' /></LoaderStyle>;
+    return <Preloader />
   }
 });
 
 const Starship = Loadable({
   loader: () => import("./views/Starship"),
   loading() {
-    return <LoaderStyle><img src={loading} alt='loading...' /></LoaderStyle>;
+    return <Preloader />
   }
 });
 
 const Home = Loadable({
   loader: () => import("./views/Home"),
   loading() {
-    return <LoaderStyle><img src={loading} alt='loading...' /></LoaderStyle>;
+    return <Preloader />
   }
 });
 
 function App() {
   return (
     <SWAPI>
-      <Header />
-      <main id="main">
-        <BrowserRouter>
-          <Switch>
-            <Route path="/character/:id" component={Character} />
-            <Route path="/episode/:id" component={Episode} />
-            <Route path="/specie/:id" component={Specie} />
-            <Route path="/vehicle/:id" component={Vehicle} />
-            <Route path="/planet/:id" component={Planet} />
-            <Route path="/starship/:id" component={Starship} />
-            <Route path="/" component={Home} />
-            <Route path="" component={Home} />
-          </Switch>
-        </BrowserRouter>
-      </main>
+      <BrowserRouter>
+        <Header />
+        <main id="main">
+            <Switch>
+              <Route path="/character/:id" component={Character} />
+              <Route path="/episode/:id" component={Episode} />
+              <Route path="/specie/:id" component={Specie} />
+              <Route path="/vehicle/:id" component={Vehicle} />
+              <Route path="/planet/:id" component={Planet} />
+              <Route path="/starship/:id" component={Starship} />
+              <Route path="/" component={Home} />
+              <Route path="" component={Home} />
+            </Switch>
+        </main>
+      </BrowserRouter>
     </SWAPI>
   );
 }
