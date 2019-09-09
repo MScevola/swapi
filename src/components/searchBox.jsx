@@ -4,7 +4,10 @@ import styled from 'styled-components';
 const Container = styled.div`
     position: relative;
     display: block;
+    height: 80px;
     padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
 
     input{
         position: relative;
