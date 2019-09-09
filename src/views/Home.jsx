@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +6,6 @@ import { CharacterCard } from '../components/cards';
 
 import * as SW_SERVICES from '../actions/sw_queries';
 import { SearchBox } from '../components/searchBox';
-import { Preloader } from '../components/preloader';
 
 const Container = styled.div`
     position: absolute;
@@ -19,7 +18,7 @@ const CharactersList = styled.ul`
     position: relative;
     display: block;
     max-width: 800px;
-    max-height: calc(100% - 74px);
+    max-height: calc(100% - 80px);
     margin: 0 auto;
     padding: 0 20px 60px;
     list-style: none;
@@ -52,8 +51,6 @@ const Home = () => {
     const [characters, setCharacters] = useState([])
     const [isSearch, setIsSearch] = useState(false)
 
-    const listRef = useRef()
-
     useEffect(() => {
         let isMounted = true
 
@@ -71,7 +68,7 @@ const Home = () => {
     }, [page])
 
     const handleScroll = e => {
-        const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+        const bottom = (e.target.scrollHeight - e.target.scrollTop) === (e.target.clientHeight);
         if (bottom) {
             setPage(1 + page)
         }
@@ -87,7 +84,7 @@ const Home = () => {
     }
 
     return(
-        <Container>
+        <Container data-test='home'>
             <SearchBox onChange={handleSearch} />
             <CharactersList onScroll={handleScroll}>
                 {

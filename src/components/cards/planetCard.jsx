@@ -54,13 +54,13 @@ const PlanetCard = ({ planet }) => {
     console.log(planetData)
     
     return(
-        <Link to={`/planet/${!!planetData.url ? planetData.url.split('/')[5] : ''}`}>
+        // <Link to={`/planet/${!!planetData.url ? planetData.url.split('/')[5] : ''}`}>
             <Container>
                 <span className="film-title">
                     {planetData.name}
                 </span>
             </Container>
-        </Link>
+        // </Link>
     )
 }
 

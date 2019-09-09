@@ -54,14 +54,14 @@ const SpecieCard = ({ specie }) => {
     console.log(specieData)
     
     return(
-        <Link to={`/specie/${!!specieData.url ? specieData.url.split('/')[5] : ''}`}>
+        // <Link to={`/specie/${!!specieData.url ? specieData.url.split('/')[5] : ''}`}>
             <Container>
                 <span className="film-title">
                     <span><strong>Specie:</strong> {specieData.name}</span>
                     <span><strong>Specie language:</strong> {specieData.language}</span>
                 </span>
             </Container>
-        </Link>
+        // </Link>
     )
 }
 

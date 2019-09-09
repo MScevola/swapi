@@ -54,13 +54,13 @@ const VehicleCard = ({ vehicle }) => {
     console.log(vehicleData)
     
     return(
-        <Link to={`/vehicle/${!!vehicleData.url ? vehicleData.url.split('/')[5] : ''}`}>
+        // <Link to={`/vehicle/${!!vehicleData.url ? vehicleData.url.split('/')[5] : ''}`}>
             <Container>
                 <span className="film-title">
                     <span>{vehicleData.name}</span>
                 </span>
             </Container>
-        </Link>
+        // </Link>
     )
 }
 

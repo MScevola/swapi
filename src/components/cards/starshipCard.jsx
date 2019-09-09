@@ -54,13 +54,13 @@ const StarshipCard = ({ starship }) => {
     console.log(starshipData)
     
     return(
-        <Link to={`/starship/${!!starshipData.url ? starshipData.url.split('/')[5] : ''}`}>
+        // <Link to={`/starship/${!!starshipData.url ? starshipData.url.split('/')[5] : ''}`}>
             <Container>
                 <span className="film-title">
                     <span>{starshipData.name}</span>
                 </span>
             </Container>
-        </Link>
+        // </Link>
     )
 }
 

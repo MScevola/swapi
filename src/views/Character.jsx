@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { Preloader } from '../components/preloader';
+
+import goBack from '../assets/arrow-down.svg';
 
 import { FilmsList, SpeciesList, StarshipsList, VehiclesList, PlanetsList } from '../sections';
 
@@ -56,6 +59,16 @@ const Container = styled.div`
             }
         }
     }
+
+    .go-back{
+        position: relative;
+        margin-bottom10px;
+
+        img{
+            width: 30px;
+            transform: rotate(90deg);
+        }
+    }
 `
 
 const Character = ({ match }) => {
@@ -88,6 +101,7 @@ const Character = ({ match }) => {
     else
     return(
         <Container>
+            <Link to='/' className='go-back'><img src={goBack} alt="go back"/></Link>
             <h1>{character.name}</h1>
             <ul className="physical">
                 <li><span>Birth: </span>{character.birth_year}</li>
