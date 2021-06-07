@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'https://swapi.co/api';
+const API_URL = 'https://swapi.dev/api';
 
-export async function getCharacters(page){   
+export async function getCharacters(page){
     try {
         const headers = {
             'Content-Type': 'application/json'
@@ -14,7 +14,7 @@ export async function getCharacters(page){
     }
 }
 
-export async function searchCharacters(search){   
+export async function searchCharacters(search){
     try {
         const headers = {
             'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ export async function searchCharacters(search){
     }
 }
 
-export async function getCharacter(id){   
+export async function getCharacter(id){
     try {
         const headers = {
             'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ export async function getCharacter(id){
     }
 }
 
-export async function getFilm(id){   
+export async function getFilm(id){
     try {
         const headers = {
             'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ export async function getFilm(id){
     }
 }
 
-export async function getSpecie(id){   
+export async function getSpecie(id){
     try {
         const headers = {
             'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ export async function getSpecie(id){
     }
 }
 
-export async function getVehicle(id){   
+export async function getVehicle(id){
     try {
         const headers = {
             'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ export async function getVehicle(id){
     }
 }
 
-export async function getStarship(id){   
+export async function getStarship(id){
     try {
         const headers = {
             'Content-Type': 'application/json'
@@ -86,7 +86,7 @@ export async function getStarship(id){
     }
 }
 
-export async function getPlanet(id){   
+export async function getPlanet(id){
     try {
         const headers = {
             'Content-Type': 'application/json'
